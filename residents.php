@@ -89,18 +89,7 @@
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
-                                    <tr>
-                                        <td>01</td>
-                                        <td>Diseñador</td>
-                                        <td>Diseño</td>
-                                        <td>5/20/2023</td>
-                                        <td>Diseño@gmail.com</td>
-                                        <td>+63 12 345 6789</td>
-                                        <td>Pngapong San Pablo</td>
-                                        <td>21</td>
-                                        <td>Male</td>
-                                        <td class="text-center align-middle" style="max-height: 60px;height: 60px;"><a class="btn btnMaterial btn-flat success semicircle" role="button" href="residents-profile.php"><i class="far fa-eye"></i></a><a class="btn btnMaterial btn-flat success semicircle" role="button" href="#" data-bs-target="#update-resident" data-bs-toggle="modal"><i class="fas fa-pen"></i></a><button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover" type="button" style="margin-left: 5px;" data-bs-toggle="modal" data-bs-target="#add-complain"><i class="fas fa-user-shield btnNoBorders" style="color: #DC3545;"></i></button><button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover" type="button" style="margin-left: 5px;" data-bs-toggle="modal" data-bs-target="#confirmation"><i class="fas fa-trash btnNoBorders" style="color: #DC3545;"></i></button></td>
-                                    </tr>
+                                        <?php include_once "functions/view-residents.php" ?>
                                 </tbody>
                             </table>
                         </div>
@@ -208,7 +197,8 @@
                 <div class="modal-body">
                     <section>
                         <div class="container">
-                            <form id="application-form-3">
+                            <form id="application-form-3" action="functions/update-residents.php" method="post">
+                                 <input type="hidden" name="resident_id">
                                 <div class="form-group mb-3">
                                     <div class="row">
                                         <div class="col">
@@ -246,7 +236,17 @@
                                     </div>
                                 </div>
                                 <div class="form-group mb-3">
-                                    <p><strong>Status</strong><span class="text-danger">*</span></p><input class="form-control" type="text" required="" name="status" placeholder="Ex. Deceased">
+                                    <p><strong>Status</strong><span class="text-danger">*</span></p><input class="form-control" type="text"  name="status" placeholder="Ex. Deceased">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <p><strong>Cause of Death</strong><span class="text-danger">*</span></p><textarea class="form-control" type="text" placeholder="Ex.  Juan is noisy" name="cause_of_death"></textarea>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p><strong>Date Of Death</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" type="date" name="date_of_death">
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="justify-content-center d-flex form-group mb-3">
                                     <div id="submit-btn-3">
@@ -270,13 +270,16 @@
     <div class="modal fade" role="dialog" tabindex="-1" id="confirmation">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Remove Resident</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Are you sure you want to remove this person?</p>
-                </div>
-                <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button><button class="btn btn-danger" type="button">Remove</button></div>
+                <form action="" method="post">
+                     <input type="hidden" name="resident_id">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Remove Resident</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to remove this person?</p>
+                    </div>
+                    <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button><button class="btn btn-danger" type="button">Remove</button></div>
+                </form>
             </div>
         </div>
     </div>
@@ -289,7 +292,8 @@
                 <div class="modal-body">
                     <section>
                         <div class="container">
-                            <form id="application-form-2">
+                            <form id="application-form-2" action="functions/add-complain.php" method="post">
+                             <input type="hidden" name="resident_id">
                                 <div class="form-group mb-3">
                                     <div class="row">
                                         <div class="col">
@@ -338,6 +342,37 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/jquery.min.js"></script>
+    <script>
+         $('button[data-bs-target="#update-resident"]').on('click', function() {
+        // Get the user ID from the data attribute.
+        var resident_id = $(this).data('resident-id');
+        console.log(resident_id);
+        // Set the value of all input fields with the name "userid" to the user ID.
+        $('input[name="resident_id"]').each(function() {
+            $(this).val(resident_id);
+        });
+        });
+
+        $('button[data-bs-target="#add-complain"]').on('click', function() {
+        // Get the user ID from the data attribute.
+        var resident_id = $(this).data('resident-id');
+        console.log(resident_id);
+        // Set the value of all input fields with the name "userid" to the user ID.
+        $('input[name="resident_id"]').each(function() {
+            $(this).val(resident_id);
+        });
+        });
+
+        $('button[data-bs-target="#confirmation"]').on('click', function() {
+        // Get the user ID from the data attribute.
+        var resident_id = $(this).data('resident-id');
+        console.log(resident_id);
+        // Set the value of all input fields with the name "userid" to the user ID.
+        $('input[name="resident_id"]').each(function() {
+            $(this).val(resident_id);
+        });
+        });
+    </script>
 </body>
 
 </html>

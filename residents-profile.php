@@ -1,4 +1,5 @@
 <?php include_once 'functions/authentication.php'; ?>
+<?php include_once 'functions/resident-profile-complains-counter.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,7 +55,7 @@
                 <div class="card border-info border-2 mb-4">
                     <div class="card-body text-center p-4"><span class="badge rounded-pill bg-info position-absolute top-0 start-50 translate-middle text-uppercase">Active&nbsp;</span>
                         <h4 class="fw-bold card-subtitle">Active Complains</h4>
-                        <h4 class="display-5 fw-bold card-title">0</h4>
+                        <h4 class="display-5 fw-bold card-title"><?php get_active(); ?></h4>
                         <p>PSPRIS - System</p>
                     </div>
                 </div>
@@ -63,7 +64,7 @@
                 <div class="card border-danger border-2 mb-4">
                     <div class="card-body text-center p-4"><span class="badge rounded-pill bg-danger position-absolute top-0 start-50 translate-middle text-uppercase">Total</span>
                         <h4 class="fw-bold card-subtitle">Complains</h4>
-                        <h4 class="display-5 fw-bold card-title">0</h4>
+                        <h4 class="display-5 fw-bold card-title"><?php get_total(); ?></h4>
                         <p>PSPRIS - System</p>
                     </div>
                 </div>
@@ -72,56 +73,15 @@
                 <div class="card border-success border-2 mb-4">
                     <div class="card-body text-center p-4"><span class="badge rounded-pill bg-success position-absolute top-0 start-50 translate-middle text-uppercase">Resolve</span>
                         <h4 class="fw-bold card-subtitle">Resolved Complains</h4>
-                        <h4 class="display-5 fw-bold card-title">0</h4>
+                        <h4 class="display-5 fw-bold card-title"><?php get_resolve(); ?></h4>
                         <p>PSPRIS - System</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
-            <h3 class="text-dark mb-4">Resident Profile</h3>
-            <div class="card shadow mb-3">
-                <div class="card-header py-3">
-                    <p class="text-primary m-0 fw-bold">Personal Information</p>
-                </div>
-                <div class="card-body">
-                    <form>
-                        <div class="row" style="margin-bottom: 25px;text-align: left;">
-                            <div class="col-md-6 col-xl-12 offset-xl-0">
-                                <div class="mb-3"></div><img src="assets/img/man.png" width="200px">
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3"><label class="form-label" for="first_name"><strong>First Name</strong></label><input class="form-control" type="text" placeholder="Juan" name="firstname" required="" readonly=""></div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3"><label class="form-label" for="last_name"><strong>Last Name</strong></label><input class="form-control" type="text" placeholder="Doe" name="lastname" required="" readonly=""></div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3"><label class="form-label" for="last_name"><strong>Birthday</strong></label><input class="form-control" type="text" placeholder="Birthdate" name="birthdate" required="" readonly=""></div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3"><label class="form-label" for="last_name"><strong>Email</strong></label><input class="form-control" type="text" placeholder="Email" name="email" required="" readonly=""></div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3"><label class="form-label" for="last_name"><strong>Phone</strong></label><input class="form-control" type="text" placeholder="Phone" name="phone" required="" readonly=""></div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3"><label class="form-label" for="last_name"><strong>Address</strong></label><input class="form-control" type="text" placeholder="Address" name="address" required="" readonly=""></div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3"><label class="form-label" for="last_name"><strong>Gender</strong></label><input class="form-control" type="text" placeholder="Gender" name="gender" required="" readonly=""></div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3"><label class="form-label" for="last_name"><strong>Sex</strong></label><input class="form-control" type="text" placeholder="Sex" name="sex" required="" readonly=""></div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3"><label class="form-label" for="last_name"><strong>Status</strong></label><input class="form-control" type="text" placeholder="Status" name="status" required="" readonly=""></div>
-                            </div>
-                        </div>
-                    </form><button class="btn btn-primary" type="button" data-bs-target="#add-complain" data-bs-toggle="modal">Add Complain</button>
-                </div>
-            </div>
-        </div>
+
+       <?php include_once "functions/resident-profile.php"; ?>
+
         <div class="container-fluid">
             <div class="card" id="TableSorterCard">
                 <div class="card-header py-3">
@@ -138,42 +98,23 @@
                                 <thead class="thead-dark">
                                     <tr>
                                         <th class="text-center">ID</th>
+                                        <th class="text-center">respondent</th>
                                         <th class="text-center">FIRSTNAME</th>
                                         <th class="text-center">LASTNAME</th>
                                         <th class="text-center">EMAIL</th>
                                         <th class="text-center">PHONE</th>
-                                        <th class="text-center">aDDRESS</th>
+                                        <th class="text-center">ADDRESS</th>
                                         <th class="text-center">SEX</th>
                                         <th class="text-center">complain</th>
                                         <th class="text-center filter-false sorter-false">OPTION</th>
                                         <th class="text-center">Status</th>
+                                        <th class="text-center">DATE</th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
-                                    <tr>
-                                        <td>01</td>
-                                        <td>Diseñador</td>
-                                        <td>Diseño</td>
-                                        <td>Diseño@gmail.com</td>
-                                        <td>+63 12 345 6789</td>
-                                        <td>Pngapong San Pablo</td>
-                                        <td>Male</td>
-                                        <td>noisy kaau ka</td>
-                                        <td class="text-center align-middle" style="max-height: 60px;height: 60px;"><a class="btn btnMaterial btn-flat success semicircle" role="button" href="#" data-bs-target="#update-resident" data-bs-toggle="modal"><i class="fas fa-pen"></i></a><button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover" type="button" style="margin-left: 5px;" data-bs-toggle="modal" data-bs-target="#confirmation"><i class="fas fa-trash btnNoBorders" style="color: #DC3545;"></i></button></td>
-                                        <td>Resolve</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>Diseñador</td>
-                                        <td>Diseño</td>
-                                        <td>Diseño@gmail.com</td>
-                                        <td>+63 12 345 6789</td>
-                                        <td>Pngapong San Pablo</td>
-                                        <td>Male</td>
-                                        <td>noisy kaau ka</td>
-                                        <td class="text-center align-middle" style="max-height: 60px;height: 60px;"><a class="btn btnMaterial btn-flat success semicircle" role="button" href="#" data-bs-target="#update-resident" data-bs-toggle="modal"><i class="fas fa-pen"></i></a><button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover" type="button" style="margin-left: 5px;" data-bs-toggle="modal" data-bs-target="#confirmation"><i class="fas fa-trash btnNoBorders" style="color: #DC3545;"></i></button></td>
-                                        <td>Active</td>
-                                    </tr>
+
+                                    <?php include_once "functions/resident-complains.php"; ?>
+                                    
                                 </tbody>
                             </table>
                         </div>
