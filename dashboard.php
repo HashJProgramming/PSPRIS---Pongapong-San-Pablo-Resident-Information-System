@@ -27,7 +27,7 @@
             <div class="collapse navbar-collapse" id="navcol-2">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="dashboard.php">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="residents-complains.php">Complains</a></li>
+                    <li class="nav-item"><a class="nav-link" href="residents-residents-complains.php">Complains</a></li>
                     <li class="nav-item"><a class="nav-link" href="residents.php">Residents</a></li>
                     <li class="nav-item"><a class="nav-link" href="residents-decease.php">Decease Residents</a></li>
                 </ul>
@@ -53,7 +53,7 @@
                 <div class="card mb-4 border-primary">
                     <div class="card-body text-center p-4">
                         <h4 class="fw-bold card-subtitle">Total Residents</h4>
-                        <h4 class="display-5 fw-bold card-title">0</h4>
+                        <h4 class="display-5 fw-bold card-title"><?php get_residents(); ?></h4>
                         <p>PSPRIS - System</p><a class="btn btn-primary d-block w-100" role="button" href="residents.php">View Residents</a>
                     </div>
                 </div>
@@ -108,7 +108,7 @@
                     <div class="card-body text-center p-4">
                         <h4 class="fw-bold card-subtitle">Total Complains</h4>
                         <h4 class="display-5 fw-bold card-title"><?php get_total(); ?></h4>
-                        <p>PSPRIS - System</p><a class="btn btn-primary d-block w-100" role="button" href="complains.php">View Complains</a>
+                        <p>PSPRIS - System</p><a class="btn btn-primary d-block w-100" role="button" href="residents-complains.php">View Complains</a>
                     </div>
                 </div>
             </div>
@@ -117,16 +117,16 @@
                     <div class="card-body text-center p-4">
                         <h4 class="fw-bold card-subtitle">Total Resolve</h4>
                         <h4 class="display-5 fw-bold card-title"><?php get_resolve(); ?></h4>
-                        <p>PSPRIS - System</p><a class="btn btn-primary d-block w-100" role="button" href="complains.php">View Resolves</a>
+                        <p>PSPRIS - System</p><a class="btn btn-primary d-block w-100" role="button" href="residents-complains.php">View Resolves</a>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card mb-4 border-primary">
                     <div class="card-body text-center p-4">
-                        <h4 class="fw-bold card-subtitle">Total Complains Pending</h4>
+                        <h4 class="fw-bold card-subtitle">Total Pending Complains</h4>
                         <h4 class="display-5 fw-bold card-title"><?php get_active(); ?></h4>
-                        <p>PSPRIS - System</p><a class="btn btn-primary d-block w-100" role="button" href="complains.php">View Pending Compalins</a>
+                        <p>PSPRIS - System</p><a class="btn btn-primary d-block w-100" role="button" href="residents-complains.php">View Pending Compalins</a>
                     </div>
                 </div>
             </div>

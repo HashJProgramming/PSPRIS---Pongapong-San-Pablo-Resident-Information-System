@@ -1,4 +1,5 @@
 <?php include_once 'functions/authentication.php'; ?>
+<?php include_once 'functions/dashboard-counter.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,7 +55,7 @@
                 <div class="card border-info border-2 mb-4">
                     <div class="card-body text-center p-4"><span class="badge rounded-pill bg-info position-absolute top-0 start-50 translate-middle text-uppercase">Active&nbsp;</span>
                         <h4 class="fw-bold card-subtitle">Active Complains</h4>
-                        <h4 class="display-5 fw-bold card-title">0</h4>
+                        <h4 class="display-5 fw-bold card-title"><?php get_active(); ?></h4>
                         <p>PSPRIS - System</p>
                     </div>
                 </div>
@@ -63,7 +64,7 @@
                 <div class="card border-danger border-2 mb-4">
                     <div class="card-body text-center p-4"><span class="badge rounded-pill bg-danger position-absolute top-0 start-50 translate-middle text-uppercase">Total</span>
                         <h4 class="fw-bold card-subtitle">Complains</h4>
-                        <h4 class="display-5 fw-bold card-title">0</h4>
+                        <h4 class="display-5 fw-bold card-title"><?php get_total(); ?></h4>
                         <p>PSPRIS - System</p>
                     </div>
                 </div>
@@ -72,7 +73,7 @@
                 <div class="card border-success border-2 mb-4">
                     <div class="card-body text-center p-4"><span class="badge rounded-pill bg-success position-absolute top-0 start-50 translate-middle text-uppercase">Resolve</span>
                         <h4 class="fw-bold card-subtitle">Resolved Complains</h4>
-                        <h4 class="display-5 fw-bold card-title">0</h4>
+                        <h4 class="display-5 fw-bold card-title"><?php get_resolve(); ?></h4>
                         <p>PSPRIS - System</p>
                     </div>
                 </div>
@@ -104,35 +105,11 @@
                                         <th class="text-center">complain</th>
                                         <th class="text-center filter-false sorter-false">OPTION</th>
                                         <th class="text-center">Status</th>
+                                        <th class="text-center">Date</th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
-                                    <tr>
-                                        <td>01</td>
-                                        <td>Diseñador</td>
-                                        <td>Diseñador</td>
-                                        <td>Diseño</td>
-                                        <td>Diseño@gmail.com</td>
-                                        <td>+63 12 345 6789</td>
-                                        <td>Pngapong San Pablo</td>
-                                        <td>Male</td>
-                                        <td>noisy kaau ka</td>
-                                        <td class="text-center align-middle" style="max-height: 60px;height: 60px;"><a class="btn btnMaterial btn-flat success semicircle" role="button" href="residents-profile.php"><i class="far fa-eye"></i></a><button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover" type="button" style="margin-left: 5px;" data-bs-toggle="modal" data-bs-target="#update-complain"><i class="fas fa-pen text-success btnNoBorders" style="color: #DC3545;"></i></button><button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover" type="button" style="margin-left: 5px;" data-bs-toggle="modal" data-bs-target="#confirmation"><i class="fas fa-trash btnNoBorders" style="color: #DC3545;"></i></button></td>
-                                        <td>Resolve</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>Diseñador</td>
-                                        <td>Diseñador</td>
-                                        <td>Diseño</td>
-                                        <td>Diseño@gmail.com</td>
-                                        <td>+63 12 345 6789</td>
-                                        <td>Pngapong San Pablo</td>
-                                        <td>Male</td>
-                                        <td>noisy kaau ka</td>
-                                        <td class="text-center align-middle" style="max-height: 60px;height: 60px;"><a class="btn btnMaterial btn-flat success semicircle" role="button" href="residents-profile.php"><i class="far fa-eye"></i></a><button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover" type="button" style="margin-left: 5px;" data-bs-toggle="modal" data-bs-target="#update-complain"><i class="fas fa-pen text-success btnNoBorders" style="color: #DC3545;"></i></button><button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover" type="button" style="margin-left: 5px;" data-bs-toggle="modal" data-bs-target="#confirmation"><i class="fas fa-trash btnNoBorders" style="color: #DC3545;"></i></button></td>
-                                        <td>Active</td>
-                                    </tr>
+                                 <?php include_once "functions/view-complains.php"; ?>
                                 </tbody>
                             </table>
                         </div>

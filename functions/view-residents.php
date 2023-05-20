@@ -4,7 +4,7 @@
 $db = new PDO('mysql:host=localhost;dbname=db_hashy', 'root', '');
 
 // Get all data from the products table
-$sql = 'SELECT * FROM residents';
+$sql = 'SELECT * FROM residents ORDER BY firstname ASC';
 $stmt = $db->prepare($sql);
 $stmt->execute();
 $results = $stmt->fetchAll();
