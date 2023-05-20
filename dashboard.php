@@ -1,4 +1,5 @@
 <?php include_once 'functions/authentication.php'; ?>
+<?php include_once 'functions/dashboard-counter.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,7 +62,7 @@
                 <div class="card mb-4 border-primary">
                     <div class="card-body text-center p-4">
                         <h4 class="fw-bold card-subtitle">Total Male</h4>
-                        <h4 class="display-5 fw-bold card-title">0</h4>
+                        <h4 class="display-5 fw-bold card-title"><?php get_male(); ?></h4>
                         <p>PSPRIS - System</p><a class="btn btn-primary d-block w-100" role="button" href="residents.php">View Residents</a>
                     </div>
                 </div>
@@ -70,7 +71,7 @@
                 <div class="card mb-4 border-primary">
                     <div class="card-body text-center p-4">
                         <h4 class="fw-bold card-subtitle">Total Female</h4>
-                        <h4 class="display-5 fw-bold card-title">0</h4>
+                        <h4 class="display-5 fw-bold card-title"><?php get_female(); ?></h4>
                         <p>PSPRIS - System</p><a class="btn btn-primary d-block w-100" role="button" href="residents.php">View Residents</a>
                     </div>
                 </div>
@@ -79,8 +80,8 @@
                 <div class="card mb-4 border-primary">
                     <div class="card-body text-center p-4">
                         <h4 class="fw-bold card-subtitle">Total Deceased</h4>
-                        <h4 class="display-5 fw-bold card-title">0</h4>
-                        <p>Non vulputate feugiat semper.</p><a class="btn btn-primary d-block w-100" role="button" href="#">View Deceased</a>
+                        <h4 class="display-5 fw-bold card-title"><?php get_deceased(); ?></h4>
+                        <p>PSPRIS - System</p><a class="btn btn-primary d-block w-100" role="button" href="#">View Deceased</a>
                     </div>
                 </div>
             </div>
@@ -88,7 +89,7 @@
                 <div class="card mb-4 border-primary">
                     <div class="card-body text-center p-4">
                         <h4 class="fw-bold card-subtitle">Total Young</h4>
-                        <h4 class="display-5 fw-bold card-title">0</h4>
+                        <h4 class="display-5 fw-bold card-title"><?php get_young(); ?></h4>
                         <p>PSPRIS - System</p><a class="btn btn-primary d-block w-100" role="button" href="residents.php">View Residents</a>
                     </div>
                 </div>
@@ -96,8 +97,8 @@
             <div class="col">
                 <div class="card mb-4 border-primary">
                     <div class="card-body text-center p-4">
-                        <h4 class="fw-bold card-subtitle">Total Old</h4>
-                        <h4 class="display-5 fw-bold card-title">0</h4>
+                        <h4 class="fw-bold card-subtitle">Total Adult</h4>
+                        <h4 class="display-5 fw-bold card-title"><?php get_old(); ?></h4>
                         <p>PSPRIS - System</p><a class="btn btn-primary d-block w-100" role="button" href="residents.php">View Residents</a>
                     </div>
                 </div>
@@ -106,7 +107,7 @@
                 <div class="card mb-4 border-primary">
                     <div class="card-body text-center p-4">
                         <h4 class="fw-bold card-subtitle">Total Complains</h4>
-                        <h4 class="display-5 fw-bold card-title">0</h4>
+                        <h4 class="display-5 fw-bold card-title"><?php get_total(); ?></h4>
                         <p>PSPRIS - System</p><a class="btn btn-primary d-block w-100" role="button" href="complains.php">View Complains</a>
                     </div>
                 </div>
@@ -115,7 +116,7 @@
                 <div class="card mb-4 border-primary">
                     <div class="card-body text-center p-4">
                         <h4 class="fw-bold card-subtitle">Total Resolve</h4>
-                        <h4 class="display-5 fw-bold card-title">0</h4>
+                        <h4 class="display-5 fw-bold card-title"><?php get_resolve(); ?></h4>
                         <p>PSPRIS - System</p><a class="btn btn-primary d-block w-100" role="button" href="complains.php">View Resolves</a>
                     </div>
                 </div>
@@ -124,7 +125,7 @@
                 <div class="card mb-4 border-primary">
                     <div class="card-body text-center p-4">
                         <h4 class="fw-bold card-subtitle">Total Complains Pending</h4>
-                        <h4 class="display-5 fw-bold card-title">0</h4>
+                        <h4 class="display-5 fw-bold card-title"><?php get_active(); ?></h4>
                         <p>PSPRIS - System</p><a class="btn btn-primary d-block w-100" role="button" href="complains.php">View Pending Compalins</a>
                     </div>
                 </div>

@@ -31,7 +31,7 @@ function get_resolve(){
 
 function get_male(){
     $db = new PDO('mysql:host=localhost;dbname=db_hashy', 'root', '');
-    $sql = "SELECT COUNT(*) AS total_male FROM resident WHERE sex='Male'";
+    $sql = "SELECT COUNT(*) AS total_male FROM residents WHERE sex='Male'";
     $result = $db->query($sql);
     $row = $result->fetch();
     echo $row['total_male'];
@@ -40,7 +40,7 @@ function get_male(){
 
 function get_female(){
     $db = new PDO('mysql:host=localhost;dbname=db_hashy', 'root', '');
-    $sql = "SELECT COUNT(*) AS total_female FROM resident WHERE sex='Female'";
+    $sql = "SELECT COUNT(*) AS total_female FROM residents WHERE sex='Female'";
     $result = $db->query($sql);
     $row = $result->fetch();
     echo $row['total_female'];
@@ -49,7 +49,7 @@ function get_female(){
 
 function get_deceased(){
     $db = new PDO('mysql:host=localhost;dbname=db_hashy', 'root', '');
-    $sql = "SELECT COUNT(*) AS total_deceased FROM resident WHERE status='Deceased'";
+    $sql = "SELECT COUNT(*) AS total_deceased FROM residents WHERE status='Deceased'";
     $result = $db->query($sql);
     $row = $result->fetch();
     echo $row['total_deceased'];
@@ -58,7 +58,7 @@ function get_deceased(){
 
 function get_young(){
     $db = new PDO('mysql:host=localhost;dbname=db_hashy', 'root', '');
-    $sql = "SELECT COUNT(*) AS total_young FROM resident WHERE age BETWEEN 0 AND 17";
+    $sql = "SELECT COUNT(*) AS total_young FROM residents WHERE age BETWEEN 0 AND 17";
     $result = $db->query($sql);
     $row = $result->fetch();
     echo $row['total_young'];
@@ -67,10 +67,18 @@ function get_young(){
 
 function get_old(){
     $db = new PDO('mysql:host=localhost;dbname=db_hashy', 'root', '');
-    $sql = "SELECT COUNT(*) AS total_old FROM resident WHERE age BETWEEN 18 AND 99";
+    $sql = "SELECT COUNT(*) AS total_old FROM residents WHERE age BETWEEN 18 AND 99";
     $result = $db->query($sql);
     $row = $result->fetch();
     echo $row['total_old'];
+}
+
+function get_residents(){
+    $db = new PDO('mysql:host=localhost;dbname=db_hashy', 'root', '');
+    $sql = "SELECT COUNT(*) AS total_residents FROM resident";
+    $result = $db->query($sql);
+    $row = $result->fetch();
+    echo $row['total_residents'];
 }
 
 ?>

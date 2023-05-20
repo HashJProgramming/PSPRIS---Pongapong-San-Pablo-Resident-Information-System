@@ -16,13 +16,13 @@ $status = "Pending";
 
 
 // Insert the complaint into the database
-$sql = "INSERT INTO complaints (resident_id, firstname, lastname, birthdate, email, phone, address, sex, complain, status) VALUES ('$resident_id', '$firstname', '$lastname', '$birthdate', '$email', '$phone', '$address', '$sex', '$complain', '$status')";
+$sql = "INSERT INTO complaints (resident_id, firstname, lastname, email, phone, address, sex, complain, status) VALUES ('$resident_id', '$firstname', '$lastname', '$email', '$phone', '$address', '$sex', '$complain', '$status')";
 
 $result = $conn->query($sql);
 
 if ($result === TRUE) {
   // Complaint added successfully
-  echo "Complaint added successfully.";
+  header('Location: ../residents-profile.php?id='.$resident_id.'&success=1');
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
