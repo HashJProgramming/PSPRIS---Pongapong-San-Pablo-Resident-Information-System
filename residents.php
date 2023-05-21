@@ -49,6 +49,38 @@
             </div>
         </div>
     </header>
+    <?php include_once 'functions/dashboard-counter.php' ?>
+<div class="container py-4 py-xl-5">
+   <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 d-xl-flex">
+      <div class="col">
+            <div class="card border-info border-2 mb-4">
+                  <div class="card-body text-center p-4"><span class="badge rounded-pill bg-info position-absolute top-0 start-50 translate-middle text-uppercase">Active&nbsp;</span>
+                     <h4 class="fw-bold card-subtitle">Residents</h4>
+                     <h4 class="display-5 fw-bold card-title"><?php get_residents(); ?></h4>
+                     <p>PSPRIS - System</p>
+                  </div>
+            </div>
+         </div>
+         <div class="col">
+            <div class="card border-danger border-2 mb-4">
+                  <div class="card-body text-center p-4"><span class="badge rounded-pill bg-danger position-absolute top-0 start-50 translate-middle text-uppercase">Total</span>
+                     <h4 class="fw-bold card-subtitle">Male</h4>
+                     <h4 class="display-5 fw-bold card-title"><?php get_male(); ?></h4>
+                     <p>PSPRIS - System</p>
+                  </div>
+            </div>
+         </div>
+         <div class="col">
+            <div class="card border-success border-2 mb-4">
+                  <div class="card-body text-center p-4"><span class="badge rounded-pill bg-success position-absolute top-0 start-50 translate-middle text-uppercase">Resolve</span>
+                     <h4 class="fw-bold card-subtitle">Female</h4>
+                     <h4 class="display-5 fw-bold card-title"><?php get_female(); ?></h4>
+                     <p>PSPRIS - System</p>
+                  </div>
+            </div>
+         </div>
+   </div>
+</div>
     <section class="py-4 py-xl-5">
         <section class="py-4 py-xl-5">
             <div class="bg-light border rounded border-0 border-light d-flex flex-column justify-content-between align-items-center flex-lg-row p-4 p-lg-5">
@@ -98,31 +130,7 @@
             </div>
         </div>
     </section>
-    <footer class="bg-light footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 text-center text-lg-start my-auto h-100">
-                    <ul class="list-inline mb-2">
-                        <li class="list-inline-item"><a href="#">About</a></li>
-                        <li class="list-inline-item"><span>⋅</span></li>
-                        <li class="list-inline-item"><a href="#">Contact</a></li>
-                        <li class="list-inline-item"><span>⋅</span></li>
-                        <li class="list-inline-item"><a href="#">Terms of &nbsp;Use</a></li>
-                        <li class="list-inline-item"><span>⋅</span></li>
-                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-                    </ul>
-                    <p class="text-muted small mb-4 mb-lg-0">© Pongapong San Pablo Resident Information System 2023. All Rights Reserved.</p>
-                </div>
-                <div class="col-lg-6 text-center text-lg-end my-auto h-100">
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook fa-2x fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter fa-2x fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-instagram fa-2x fa-fw"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+
     <div class="modal fade" role="dialog" tabindex="-1" id="add-resident">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">

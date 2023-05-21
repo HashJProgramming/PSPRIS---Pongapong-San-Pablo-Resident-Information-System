@@ -273,19 +273,25 @@
     </div>
     <div class="modal fade" role="dialog" tabindex="-1" id="confirmation">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Remove Complain</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+            <form action="functions/remove-complain.php" method="post">
+                <input type="hidden" name="resident_id">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Remove Complain</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to remove this complain?</p>
+                    </div>
+                    <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button><button class="btn btn-danger" type="submit">Remove</button></div>
                 </div>
-                <div class="modal-body">
-                    <p>Are you sure you want to remove this complain?</p>
-                </div>
-                <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button><button class="btn btn-danger" type="button">Remove</button></div>
             </div>
-        </div>
+            </form>
+            
     </div>
     <div class="modal fade" role="dialog" tabindex="-1" id="resolve-complain">
         <div class="modal-dialog" role="document">
+        <form action="functions/resolve-complain.php" method="post">
+        <input type="hidden" name="resident_id">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Resolve Complain</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
@@ -293,15 +299,26 @@
                 <div class="modal-body">
                     <p>Are you sure you want to resolve this complain?</p>
                 </div>
-                <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button><button class="btn btn-warning" type="button">Resolve</button></div>
+                <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button><button class="btn btn-warning" type="submit">Resolve</button></div>
             </div>
+        </form>
         </div>
     </div>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script>
-        $('button[data-bs-target="#add-complain"]').on('click', function() {
+        $('button[data-bs-target="#confirmation"]').on('click', function() {
+        // Get the user ID from the data attribute.
+        var resident_id = $(this).data('resident-id');
+        console.log(resident_id);
+        // Set the value of all input fields with the name "userid" to the user ID.
+        $('input[name="resident_id"]').each(function() {
+            $(this).val(resident_id);
+        });
+        });
+
+        $('button[data-bs-target="#resolve-complain"]').on('click', function() {
         // Get the user ID from the data attribute.
         var resident_id = $(this).data('resident-id');
         console.log(resident_id);

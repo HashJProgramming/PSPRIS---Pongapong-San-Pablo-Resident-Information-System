@@ -32,7 +32,7 @@ foreach ($results as $row) {
                 <?php
                     if($row['status'] == 'Pending'){
                         ?>
-                        <button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover" type="button" style="margin-left: 5px;" data-bs-toggle="modal" data-bs-target="#resolve-complain">
+                        <button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover" type="button" style="margin-left: 5px;" data-bs-toggle="modal" data-bs-target="#resolve-complain" data-resident-id="<?php echo $row['id']; ?>">
                         <i class="fas fa-user-shield btnNoBorders" style="color: #DC3545;"></i></button>
                         <?php
                     }else{
@@ -44,7 +44,7 @@ foreach ($results as $row) {
                 ?>
 
 
-                <button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover" type="button" style="margin-left: 5px;" data-bs-toggle="modal" data-bs-target="#confirmation">
+                <button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover" type="button" style="margin-left: 5px;" data-bs-toggle="modal" data-bs-target="#confirmation" data-resident-id="<?php echo $row['id']; ?>">
                 <i class="fas fa-trash btnNoBorders" style="color: #DC3545;"></i></button></td>
             <td><?php echo $row['status']; ?></td>
             <td><?php echo $row['created']; ?></td>
