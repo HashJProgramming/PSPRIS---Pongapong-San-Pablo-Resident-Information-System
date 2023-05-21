@@ -17,11 +17,18 @@ $status = $_POST['status'];
 $cause_of_death = $_POST['cause_of_death'];
 $date_of_death = $_POST['date_of_death'];
 $status = strtoupper($status);
+$sex = strtoupper($sex);
 
 if ($status == 'ALIVE') {
   $cause_of_death = '';
   $date_of_death = '';
 } 
+
+if ($status == '') {
+  $status = 'ALIVE';
+  $cause_of_death = '';
+  $date_of_death = '';
+}
 
 // Update the resident in the database
 $sql = "UPDATE residents SET

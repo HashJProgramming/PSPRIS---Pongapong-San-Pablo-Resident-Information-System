@@ -23,7 +23,7 @@ foreach ($results as $row) {
             <td><?php echo $row['complain']; ?></td>
             <td class="text-center align-middle" style="max-height: 60px;height: 60px;">
                 <a class="btn btnMaterial btn-flat success semicircle" role="button" href="residents-profile.php?id=<?php echo $row['resident_id']; ?>"><i class="far fa-eye"></i></a>
-                <button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover" type="button" style="margin-left: 5px;" data-bs-toggle="modal" data-bs-target="#confirmation">
+                <button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover" type="button" style="margin-left: 5px;" data-bs-toggle="modal" data-bs-target="#confirmation" data-resident-id="<?php echo $row['id']; ?>">
                 <i class="fas fa-trash btnNoBorders" style="color: #DC3545;"></i></button></td>
             <td><?php echo $row['status']; ?></td>
             <td><?php echo $row['created']; ?></td>

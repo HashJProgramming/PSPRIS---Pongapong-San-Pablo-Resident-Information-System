@@ -270,7 +270,7 @@
     <div class="modal fade" role="dialog" tabindex="-1" id="confirmation">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form action="" method="post">
+                <form action="functions/remove-resident.php" method="post">
                      <input type="hidden" name="resident_id">
                     <div class="modal-header">
                         <h4 class="modal-title">Remove Resident</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
@@ -278,7 +278,7 @@
                     <div class="modal-body">
                         <p>Are you sure you want to remove this person?</p>
                     </div>
-                    <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button><button class="btn btn-danger" type="button">Remove</button></div>
+                    <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button><button class="btn btn-danger" type="submit">Remove</button></div>
                 </form>
             </div>
         </div>

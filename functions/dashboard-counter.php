@@ -75,7 +75,7 @@ function get_old(){
 
 function get_residents(){
     $db = new PDO('mysql:host=localhost;dbname=db_hashy', 'root', '');
-    $sql = "SELECT COUNT(*) AS total_residents FROM residents";
+    $sql = "SELECT COUNT(*) AS total_residents FROM residents WHERE status LIKE 'alive'";
     $result = $db->query($sql);
     $row = $result->fetch();
     echo $row['total_residents'];
