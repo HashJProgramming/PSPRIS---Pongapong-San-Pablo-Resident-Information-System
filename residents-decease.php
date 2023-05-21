@@ -195,46 +195,10 @@
                 <div class="modal-body">
                     <section>
                         <div class="container">
-                            <form id="application-form-3" action="functions/update-residents.php" method="post">
+                            <form id="application-form-3" action="functions/update-decease-resident.php" method="post">
                                  <input type="hidden" name="resident_id">
                                 <div class="form-group mb-3">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p><strong>First Name</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" type="text" required="" name="firstname" placeholder="Ex. Juan">
-                                        </div>
-                                        <div class="col">
-                                            <p><strong>Last Name</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" type="text" required="" name="lastname" placeholder="Ex. Smith">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group mb-3">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p><strong>Date Of Birth</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" type="date" required="" name="birthdate">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group mb-3">
-                                    <p><strong>Email&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" type="email" name="email" placeholder="user@domain.com (Optional)">
-                                </div>
-                                <div class="form-group mb-3">
-                                    <p><strong>Phone Number&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" type="number" name="phone" placeholder="63+ 00 000 0000" required="">
-                                </div>
-                                <div class="form-group mb-3">
-                                    <p><strong>Address&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" type="text" required="" name="address" placeholder="Ex. Room No-361, 33/1, 3rd Floor">
-                                </div>
-                                <div class="form-group mb-3">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p><strong>Sex</strong></p><input class="form-control" type="text" required="" name="sex" placeholder="Ex. Male">
-                                        </div>
-                                        <div class="col">
-                                            <p><strong>Age</strong></p><input class="form-control" type="text" required="" name="age" placeholder="Ex. 18">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group mb-3">
-                                    <p><strong>Status</strong><span class="text-danger">*</span></p><input class="form-control" type="text"  name="status" placeholder="Ex. Deceased">
+                                    <p><strong>Status</strong><span class="text-danger">*</span></p><input class="form-control" type="text"  name="status" placeholder="Ex. Deceased & Alive">
                                 </div>
                                 <div class="form-group mb-3">
                                     <p><strong>Cause of Death</strong><span class="text-danger">*</span></p><textarea class="form-control" type="text" placeholder="Ex.  Juan is noisy" name="cause_of_death"></textarea>
