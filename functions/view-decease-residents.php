@@ -27,8 +27,6 @@ foreach ($results as $row) {
             <i class="far fa-eye"></i></a>
                 <button class="btn btnMaterial btn-flat success semicircle" role="button" data-bs-target="#update-resident" data-bs-toggle="modal" data-resident-id="<?php echo $row['id']; ?>">
             <i class="fas fa-pen"></i></button>
-                <button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover" type="button" style="margin-left: 5px;" data-bs-toggle="modal" data-bs-target="#add-complain" data-resident-id="<?php echo $row['id']; ?>">
-            <i class="fas fa-user-shield btnNoBorders" style="color: #DC3545;"></i></button>
                 <button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover" type="button" style="margin-left: 5px;" data-bs-toggle="modal" data-bs-target="#confirmation" data-resident-id="<?php echo $row['id']; ?>">
             <i class="fas fa-trash btnNoBorders" style="color: #DC3545;"></i></button>
         </td>

@@ -54,7 +54,7 @@
    <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 d-xl-flex">
       <div class="col">
             <div class="card border-info border-2 mb-4">
-                  <div class="card-body text-center p-4"><span class="badge rounded-pill bg-info position-absolute top-0 start-50 translate-middle text-uppercase">Active&nbsp;</span>
+                  <div class="card-body text-center p-4"><span class="badge rounded-pill bg-info position-absolute top-0 start-50 translate-middle text-uppercase">Total</span>
                      <h4 class="fw-bold card-subtitle">Residents</h4>
                      <h4 class="display-5 fw-bold card-title"><?php get_residents(); ?></h4>
                      <p>PSPRIS - System</p>
@@ -62,8 +62,8 @@
             </div>
          </div>
          <div class="col">
-            <div class="card border-danger border-2 mb-4">
-                  <div class="card-body text-center p-4"><span class="badge rounded-pill bg-danger position-absolute top-0 start-50 translate-middle text-uppercase">Total</span>
+            <div class="card border-success border-2 mb-4">
+                  <div class="card-body text-center p-4"><span class="badge rounded-pill bg-success position-absolute top-0 start-50 translate-middle text-uppercase">Total</span>
                      <h4 class="fw-bold card-subtitle">Male</h4>
                      <h4 class="display-5 fw-bold card-title"><?php get_male(); ?></h4>
                      <p>PSPRIS - System</p>
@@ -72,7 +72,7 @@
          </div>
          <div class="col">
             <div class="card border-success border-2 mb-4">
-                  <div class="card-body text-center p-4"><span class="badge rounded-pill bg-success position-absolute top-0 start-50 translate-middle text-uppercase">Resolve</span>
+                  <div class="card-body text-center p-4"><span class="badge rounded-pill bg-success position-absolute top-0 start-50 translate-middle text-uppercase">Total</span>
                      <h4 class="fw-bold card-subtitle">Female</h4>
                      <h4 class="display-5 fw-bold card-title"><?php get_female(); ?></h4>
                      <p>PSPRIS - System</p>
@@ -247,7 +247,7 @@
                                     <p><strong>Status</strong><span class="text-danger">*</span></p><input class="form-control" type="text"  name="status" placeholder="Ex. Deceased">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <p><strong>Cause of Death</strong><span class="text-danger">*</span></p><textarea class="form-control" type="text" placeholder="Ex.  Juan is noisy" name="cause_of_death"></textarea>
+                                    <p><strong>Cause of Death</strong><span class="text-danger">*</span></p><textarea class="form-control" type="text" placeholder="Ex.  Heart Attack" name="cause_of_death"></textarea>
                                 </div>
                                 <div class="form-group mb-3">
                                     <div class="row">

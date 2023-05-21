@@ -12,24 +12,16 @@ $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) === 1) {
 
-  // The resident exists, so show a success message
-  echo "<script>
-    alert('Resident exists!');
-  </script>";
+  // The resident exists, so get the ID
+  $row = mysqli_fetch_assoc($result);
+  $id = $row['id'];
 
-  // Add the following code after the alert message
-  echo "<script>
-    $(document).ready(function() {
-      $('#alert').alert('Resident exists!');
-    });
-  </script>";
+  // Redirect to success.php
+  header("Location: ../success.php?id=$id&results=Confirmed Resident");
 
 } else {
 
-  // The resident does not exist, so show an error message
-  echo "<script>
-    alert('Resident does not exist!');
-  </script>";
+  header("Location: ../success.php?id=$id&results=Not Resident");
 
 }
 
