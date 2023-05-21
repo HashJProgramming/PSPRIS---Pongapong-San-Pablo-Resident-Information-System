@@ -217,7 +217,7 @@
         </div>
     </div>
     <div class="modal fade" role="dialog" tabindex="-1" id="add-complain">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Complaint Info.</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
@@ -225,7 +225,8 @@
                 <div class="modal-body">
                     <section>
                         <div class="container">
-                            <form id="application-form-2">
+                            <form id="application-form-2" action="functions/add-complain.php" method="post">
+                             <input type="hidden" name="resident_id">
                                 <div class="form-group mb-3">
                                     <div class="row">
                                         <div class="col">
@@ -299,6 +300,18 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/jquery.min.js"></script>
+    <script>
+        $('button[data-bs-target="#add-complain"]').on('click', function() {
+        // Get the user ID from the data attribute.
+        var resident_id = $(this).data('resident-id');
+        console.log(resident_id);
+        // Set the value of all input fields with the name "userid" to the user ID.
+        $('input[name="resident_id"]').each(function() {
+            $(this).val(resident_id);
+        });
+        });
+
+    </script>
 </body>
 
 </html>

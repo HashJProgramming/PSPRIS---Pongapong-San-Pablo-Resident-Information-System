@@ -33,7 +33,7 @@ foreach ($results as $row) {
                     if($row['status'] == 'Pending'){
                         ?>
                         <button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover" type="button" style="margin-left: 5px;" data-bs-toggle="modal" data-bs-target="#resolve-complain">
-                        <i class="fas fa-pen text-success btnNoBorders" style="color: #DC3545;"></i></button>
+                        <i class="fas fa-user-shield btnNoBorders btn-info" style="color: #DC3545;"></i></button>
                         <?php
                     }
                 ?>

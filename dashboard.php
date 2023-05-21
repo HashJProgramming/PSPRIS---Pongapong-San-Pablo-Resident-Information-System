@@ -27,7 +27,7 @@
             <div class="collapse navbar-collapse" id="navcol-2">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="dashboard.php">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="residents-residents-complains.php">Complains</a></li>
+                    <li class="nav-item"><a class="nav-link" href="residents-complains.php">Complains</a></li>
                     <li class="nav-item"><a class="nav-link" href="residents.php">Residents</a></li>
                     <li class="nav-item"><a class="nav-link" href="residents-decease.php">Decease Residents</a></li>
                 </ul>
