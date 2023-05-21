@@ -81,7 +81,7 @@
                     <div class="card-body text-center p-4">
                         <h4 class="fw-bold card-subtitle">Total Deceased</h4>
                         <h4 class="display-5 fw-bold card-title"><?php get_deceased(); ?></h4>
-                        <p>PSPRIS - System</p><a class="btn btn-primary d-block w-100" role="button" href="#">View Deceased</a>
+                        <p>PSPRIS - System</p><a class="btn btn-primary d-block w-100" role="button" href="residents-decease.php">View Deceased</a>
                     </div>
                 </div>
             </div>

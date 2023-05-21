@@ -104,7 +104,7 @@
                                         <th class="text-center">bIRTHDATE</th>
                                         <th class="text-center">EMAIL</th>
                                         <th class="text-center">PHONE</th>
-                                        <th class="text-center">aDDRESS</th>
+                                        <th class="text-center">ADDRESS</th>
                                         <th class="text-center">age</th>
                                         <th class="text-center">SEX</th>
                                         <th class="text-center filter-false sorter-false">OPTION</th>
@@ -201,7 +201,7 @@
                                     <p><strong>Status</strong><span class="text-danger">*</span></p><input class="form-control" type="text"  name="status" placeholder="Ex. Deceased & Alive">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <p><strong>Cause of Death</strong><span class="text-danger">*</span></p><textarea class="form-control" type="text" placeholder="Ex.  Juan is noisy" name="cause_of_death"></textarea>
+                                    <p><strong>Cause of Death</strong><span class="text-danger">*</span></p><textarea class="form-control" type="text" placeholder="Ex.  Heart Attact" name="cause_of_death"></textarea>
                                 </div>
                                 <div class="form-group mb-3">
                                     <div class="row">
