@@ -7,7 +7,7 @@ if (!isset($_GET['id'])) {
 function get_active(){
     $id = $_GET['id'];
     $db = new PDO('mysql:host=localhost;dbname=db_hashy', 'root', '');
-    $sql = "SELECT COUNT(*) AS total_complaints FROM complaints WHERE status = 'Pending' AND id = '$id'";
+    $sql = "SELECT COUNT(*) AS total_complaints FROM complaints WHERE status = 'Pending' AND resident_id = '$id'";
     $result = $db->query($sql);
     $row = $result->fetch();
     $total_complaints = $row['total_complaints'];
@@ -17,7 +17,7 @@ function get_active(){
 function get_total(){
     $id = $_GET['id'];
     $db = new PDO('mysql:host=localhost;dbname=db_hashy', 'root', '');
-    $sql = "SELECT COUNT(*) AS total_complaints FROM complaints WHERE id = '$id'";
+    $sql = "SELECT COUNT(*) AS total_complaints FROM complaints WHERE resident_id = '$id'";
     $result = $db->query($sql);
     $row = $result->fetch();
     $total_complaints = $row['total_complaints'];
@@ -28,7 +28,7 @@ function get_total(){
 function get_resolve(){
     $id = $_GET['id'];
     $db = new PDO('mysql:host=localhost;dbname=db_hashy', 'root', '');
-    $sql = "SELECT COUNT(*) AS total_complaints FROM complaints WHERE status='Resolve' AND id = '$id'";
+    $sql = "SELECT COUNT(*) AS total_complaints FROM complaints WHERE status='Resolve' AND resident_id = '$id'";
     $result = $db->query($sql);
     $row = $result->fetch();
     $total_complaints = $row['total_complaints'];

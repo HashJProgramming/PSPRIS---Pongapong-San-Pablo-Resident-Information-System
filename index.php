@@ -5,6 +5,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
     header("Location: dashboard.php");
     exit;
 }
+include_once 'functions/dashboard-counter.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,21 +71,21 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
                     <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
                         <div class="d-flex features-icons-icon"><i class="icon-people m-auto text-primary" data-bss-hover-animate="pulse"></i></div>
                         <h3>Total Residents</h3>
-                        <p class="lead mb-0" style="font-size: 35px;"><strong>0</strong></p>
+                        <p class="lead mb-0" style="font-size: 35px;"><strong><?php echo get_residents(); ?></strong></p>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
                         <div class="d-flex features-icons-icon"><i class="icon-symbol-male m-auto text-primary" data-bss-hover-animate="pulse"></i></div>
                         <h3>Male</h3>
-                        <p class="lead mb-0" style="font-size: 35px;"><strong>0</strong></p>
+                        <p class="lead mb-0" style="font-size: 35px;"><strong><?php echo get_male(); ?></strong></p>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
                         <div class="d-flex features-icons-icon"><i class="icon-symbol-female m-auto text-primary" data-bss-hover-animate="pulse"></i></div>
                         <h3>Female</h3>
-                        <p class="lead mb-0" style="font-size: 35px;"><strong>0</strong></p>
+                        <p class="lead mb-0" style="font-size: 35px;"><strong><?php echo get_female(); ?></strong></p>
                     </div>
                 </div>
             </div>
