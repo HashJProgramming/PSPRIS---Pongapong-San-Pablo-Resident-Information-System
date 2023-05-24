@@ -13,7 +13,7 @@ $age = $_POST['age'];
 
 $sex = strtoupper($sex);
 // Check if resident already exists
-$sql = "SELECT * FROM residents WHERE firstname = '$email' AND lastname = '$lastname'";
+$sql = "SELECT * FROM residents WHERE firstname = '$firstname' AND lastname = '$lastname'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
