@@ -10,7 +10,7 @@ $resident = $_POST['resident'];
 $names = explode(" ", $resident);
 
 // Check if the resident exists
-$sql = "SELECT * FROM residents WHERE firstname= '$names[0]' OR lastname ='$names[1]'";
+$sql = "SELECT * FROM residents WHERE firstname= '$names[0]' AND lastname ='$names[1]'";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) === 1) {
