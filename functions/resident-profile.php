@@ -29,46 +29,52 @@ foreach ($results as $row) {
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3"><label class="form-label" for="first_name"><strong>First Name</strong></label>
-                                <input class="form-control" type="text" placeholder="Juan" name="firstname" required="" readonly="" value="<?php echo $row['firstname']; ?>"></div>
+                                <input class="form-control" pattern="^(?!\s).*$" type="text" placeholder="Juan" name="firstname" required="" readonly="" value="<?php echo $row['firstname']; ?>"></div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3"><label class="form-label" for="last_name"><strong>Last Name</strong></label>
-                                <input class="form-control" type="text" placeholder="Doe" name="lastname" required="" readonly="" value="<?php echo $row['lastname']; ?>"></div>
+                                <input class="form-control" pattern="^(?!\s).*$" type="text" placeholder="Doe" name="lastname" required="" readonly="" value="<?php echo $row['lastname']; ?>"></div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3"><label class="form-label" for="last_name"><strong>Birthday</strong></label>
-                                <input class="form-control" type="text" placeholder="Birthdate" name="birthdate" required="" readonly="" value="<?php echo $row['birthdate']; ?>"></div>
+                                <input class="form-control" pattern="^(?!\s).*$" type="text" placeholder="Birthdate" name="birthdate" required="" readonly="" value="<?php echo $row['birthdate']; ?>"></div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3"><label class="form-label" for="last_name"><strong>Email</strong></label>
-                                <input class="form-control" type="text" placeholder="Email" name="email" required="" readonly="" value="<?php echo $row['email']; ?>"></div>
+                                <input class="form-control" pattern="^(?!\s).*$" type="text" placeholder="Email" name="email" required="" readonly="" value="<?php echo $row['email']; ?>"></div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3"><label class="form-label" for="last_name"><strong>Phone</strong></label>
-                                <input class="form-control" type="text" placeholder="Phone" name="phone" required="" readonly="" value="<?php echo $row['phone']; ?>"></div>
+                                <input class="form-control" pattern="^(?!\s).*$" type="text" placeholder="Phone" name="phone" required="" readonly="" value="<?php echo $row['phone']; ?>"></div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3"><label class="form-label" for="last_name"><strong>Address</strong></label>
-                                <input class="form-control" type="text" placeholder="Address" name="address" required="" readonly="" value="<?php echo $row['address']; ?>"></div>
+                                <input class="form-control" pattern="^(?!\s).*$" type="text" placeholder="Address" name="address" required="" readonly="" value="<?php echo $row['address']; ?>"></div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3"><label class="form-label" for="last_name"><strong>Sex</strong></label>
-                                <input class="form-control" type="text" placeholder="Sex" name="sex" required="" readonly="" value="<?php echo $row['sex']; ?>"></div>
+                                <input class="form-control" pattern="^(?!\s).*$" type="text" placeholder="Sex" name="sex" required="" readonly="" value="<?php echo $row['sex']; ?>"></div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3"><label class="form-label" for="last_name"><strong>Status</strong></label>
-                                <input class="form-control" type="text" placeholder="Status" name="status" required="" readonly="" value="<?php echo $row['status']; ?>"></div>
+                                <input class="form-control" pattern="^(?!\s).*$" type="text" placeholder="Status" name="status" required="" readonly="" value="<?php echo $row['status']; ?>"></div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="mb-3"><label class="form-label" for="last_name"><strong>Cause of Death</strong></label>
-                                <input class="form-control" type="text" placeholder="None" name="status" required="" readonly="" value="<?php echo $row['cause_of_death']; ?>"></div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3"><label class="form-label" for="last_name"><strong>Date of Death</strong></label>
-                                <input class="form-control" type="text" placeholder="None" name="status" required="" readonly="" value="<?php echo $row['date_of_death']; ?>"></div>
-                            </div>
+                            <?php 
+                                if ($row['status'] !== 'ALIVE') {
+                                    ?>
+                                    <div class="col-md-6">
+                                        <div class="mb-3"><label class="form-label" for="last_name"><strong>Cause of Death</strong></label>
+                                        <input class="form-control" pattern="^(?!\s).*$" type="text" placeholder="None" name="status" required="" readonly="" value="<?php echo $row['cause_of_death']; ?>"></div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3"><label class="form-label" for="last_name"><strong>Date of Death</strong></label>
+                                        <input class="form-control" pattern="^(?!\s).*$" type="text" placeholder="None" name="status" required="" readonly="" value="<?php echo $row['date_of_death']; ?>"></div>
+                                    </div>
+                                    <?php
+                                }
+                            ?>
                         </div>
-                    </form><button class="btn btn-primary" type="button" data-bs-target="#add-complain" data-bs-toggle="modal" data-resident-id="<?php echo $row['id']; ?>">Add Complain</button>
+                    </form>
                 </div>
             </div>
         </div>

@@ -22,7 +22,7 @@ $result = $conn->query($sql);
 
 if ($result === TRUE) {
   // Complaint added successfully
-  header('Location: ../residents-profile.php?id='.$resident_id.'&success=1');
+  header('Location: ../residents-profile.php?id='.$resident_id.'&success=1#success');
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }

@@ -1,5 +1,5 @@
 <?php include_once 'functions/authentication.php'; ?>
-<?php include_once 'functions/resident-profile-complains-counter.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +28,6 @@
         <div class="container-fluid"><a class="navbar-brand" href="dashboard.php">Pongapong San Pablo Resident Information System</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-2">
                 <ul class="navbar-nav">
-                    
                     <li class="nav-item"><a class="nav-link" href="residents-complains.php">Complains</a></li>
                     <li class="nav-item"><a class="nav-link" href="residents.php">Residents</a></li>
                     <li class="nav-item"><a class="nav-link" href="residents-decease.php">Decease Residents</a></li>
@@ -50,45 +49,16 @@
             </div>
         </div>
     </header>
+    <?php include_once 'functions/dashboard-counter.php' ?>
+    <div class="container py-4 py-xl-5">
     <section class="py-4 py-xl-5">
-        <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 d-xl-flex">
-            <div class="col">
-                <div class="card border-info border-2 mb-4">
-                    <div class="card-body text-center p-4"><span class="badge rounded-pill bg-info position-absolute top-0 start-50 translate-middle text-uppercase">Active&nbsp;</span>
-                        <h4 class="fw-bold card-subtitle">Active Complains</h4>
-                        <h4 class="display-5 fw-bold card-title"><?php get_active(); ?></h4>
-                        <p>PSPRIS - System</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card border-danger border-2 mb-4">
-                    <div class="card-body text-center p-4"><span class="badge rounded-pill bg-danger position-absolute top-0 start-50 translate-middle text-uppercase">Total</span>
-                        <h4 class="fw-bold card-subtitle">Complains</h4>
-                        <h4 class="display-5 fw-bold card-title"><?php get_total(); ?></h4>
-                        <p>PSPRIS - System</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card border-success border-2 mb-4">
-                    <div class="card-body text-center p-4"><span class="badge rounded-pill bg-success position-absolute top-0 start-50 translate-middle text-uppercase">Resolve</span>
-                        <h4 class="fw-bold card-subtitle">Resolved Complains</h4>
-                        <h4 class="display-5 fw-bold card-title"><?php get_resolve(); ?></h4>
-                        <p>PSPRIS - System</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-       <?php include_once "functions/resident-profile.php"; ?>
-
+        
         <div class="container-fluid">
             <div class="card" id="TableSorterCard">
                 <div class="card-header py-3">
                     <div class="row table-topper align-items-center">
                         <div class="col-12 col-sm-5 col-md-6 text-start" style="margin: 0px;padding: 5px 15px;">
-                            <p class="text-primary m-0 fw-bold">List of&nbsp; Complainants</p>
+                            <p class="text-primary m-0 fw-bold">List of Transfared Residents</p>
                         </div>
                     </div>
                 </div>
@@ -101,20 +71,17 @@
                                         <th class="text-center">ID</th>
                                         <th class="text-center">FIRSTNAME</th>
                                         <th class="text-center">LASTNAME</th>
+                                        <th class="text-center">bIRTHDATE</th>
                                         <th class="text-center">EMAIL</th>
                                         <th class="text-center">PHONE</th>
                                         <th class="text-center">ADDRESS</th>
+                                        <th class="text-center">age</th>
                                         <th class="text-center">SEX</th>
-                                        <th class="text-center">complain</th>
                                         <th class="text-center filter-false sorter-false">OPTION</th>
-                                        <th class="text-center">Status</th>
-                                        <th class="text-center">DATE</th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
-
-                                    <?php include_once "functions/resident-complains.php"; ?>
-                                    
+                                        <?php include_once "functions/view-transfered-residents.php" ?>
                                 </tbody>
                             </table>
                         </div>
@@ -123,41 +90,17 @@
             </div>
         </div>
     </section>
-    <footer class="bg-light footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 text-center text-lg-start my-auto h-100">
-                    <ul class="list-inline mb-2">
-                        <li class="list-inline-item"><a href="#">About</a></li>
-                        <li class="list-inline-item"><span>⋅</span></li>
-                        <li class="list-inline-item"><a href="#">Contact</a></li>
-                        <li class="list-inline-item"><span>⋅</span></li>
-                        <li class="list-inline-item"><a href="#">Terms of &nbsp;Use</a></li>
-                        <li class="list-inline-item"><span>⋅</span></li>
-                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-                    </ul>
-                    <p class="text-muted small mb-4 mb-lg-0">© Pongapong San Pablo Resident Information System 2023. All Rights Reserved.</p>
-                </div>
-                <div class="col-lg-6 text-center text-lg-end my-auto h-100">
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook fa-2x fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter fa-2x fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-instagram fa-2x fa-fw"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <div class="modal fade" role="dialog" tabindex="-1" id="update-resident">
-        <div class="modal-dialog" role="document">
+
+    <div class="modal fade" role="dialog" tabindex="-1" id="add-resident">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Update Resident</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                    <h4 class="modal-title">Add Resident</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <section>
                         <div class="container">
-                            <form id="application-form-3">
+                            <form id="application-form-1" method="post" action="functions/add-residents.php">
                                 <div class="form-group mb-3">
                                     <div class="row">
                                         <div class="col">
@@ -194,13 +137,59 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="justify-content-center d-flex form-group mb-3">
+                                    <div id="submit-btn-1">
+                                        <div class="row">
+                                            <div class="col"><button class="btn btn-primary" type="submit" style="width: 28em;">Add Resident</button></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col">
+                            <h3 id="fail-1" class="text-center text-danger d-none"><br>Form not Submitted&nbsp;<a href="contact.php">Try Again</a><br><br></h3>
+                            <h3 id="success-2" class="text-center text-success d-none"><br>Form Submitted Successfully&nbsp;<a href="contact.php">Send Another Response</a><br><br></h3>
+                        </div>
+                    </section>
+                </div>
+                <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="update-resident">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Update Resident</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <section>
+                        <div class="container">
+                            <form id="application-form-3" action="functions/update-decease-resident.php" method="post">
+                                 <input type="hidden" name="resident_id">
                                 <div class="form-group mb-3">
-                                    <p><strong>Status</strong><span class="text-danger">*</span></p><input class="form-control" type="text" required="" name="status" placeholder="Ex. Deceased">
+                                    <p><strong>Status</strong><span class="text-danger">*</span></p>
+                                        <select class="form-control" name="status">
+                                            <optgroup label="STATUS">
+                                                <option value="DECEASED" selected>DECEASED</option>
+                                                <option value="ALIVE">ALIVE</option>
+                                            </optgroup>
+                                        </select>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <p><strong>Cause of Death</strong><span class="text-danger">*</span></p><textarea class="form-control" type="text" placeholder="Ex.  Heart Attact" name="cause_of_death"></textarea>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p><strong>Date Of Death</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" type="date" name="date_of_death">
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="justify-content-center d-flex form-group mb-3">
                                     <div id="submit-btn-3">
                                         <div class="row">
-                                            <div class="col"><button class="btn btn-primary" type="submit" style="width: 28em;">Add Resident</button></div>
+                                            <div class="col"><button class="btn btn-primary" type="submit" style="width: 28em;">Update Resident</button></div>
                                         </div>
                                     </div>
                                 </div>
@@ -218,53 +207,48 @@
     </div>
     <div class="modal fade" role="dialog" tabindex="-1" id="confirmation">
         <div class="modal-dialog" role="document">
-            <form action="functions/remove-complain.php" method="post">
-                <input type="hidden" name="resident_id">
-                <div class="modal-content">
+            <div class="modal-content">
+                <form action="functions/remove-resident.php" method="post">
+                     <input type="hidden" name="resident_id">
                     <div class="modal-header">
-                        <h4 class="modal-title">Remove Complain</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                        <h4 class="modal-title">Remove Resident</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
-                        <p>Are you sure you want to remove this complain?</p>
+                        <p>Are you sure you want to remove this person?</p>
                     </div>
                     <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button><button class="btn btn-danger" type="submit">Remove</button></div>
-                </div>
+                </form>
             </div>
-            </form>
-            
-    </div>
-    <div class="modal fade" role="dialog" tabindex="-1" id="resolve-complain">
-        <div class="modal-dialog" role="document">
-        <form action="functions/resolve-complain.php" method="post">
-        <input type="hidden" name="resident_id">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Resolve Complain</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Are you sure you want to resolve this complain?</p>
-                </div>
-                <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button><button class="btn btn-warning" type="submit">Resolve</button></div>
-            </div>
-        </form>
         </div>
     </div>
+    
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/sweetalert.min.js"></script>
     <script>
-        const url = window.location.href;
+         $('button[data-bs-target="#update-resident"]').on('click', function() {
+        // Get the user ID from the data attribute.
+        var resident_id = $(this).data('resident-id');
+        var resident_cause = $(this).data('resident-cause');
+        var resident_date = $(this).data('resident-death');
+        console.log(resident_id);
+        console.log(resident_cause);
+        console.log(resident_date);
+        // Set the value of all input fields with the name "userid" to the user ID.
+        $('input[name="resident_id"]').each(function() {
+            $(this).val(resident_id);
+        });
 
-        if (url.indexOf("#success") > -1) {
-        swal("Success", "Pongapong San Pablo Resident Information System", "success");
-        }
+        $('textarea[name="cause_of_death"]').each(function() {
+            $(this).val(resident_cause);
+        });
 
-        if (url.indexOf("#error") > -1) {
-        swal("Error", "Pongapong San Pablo Resident Information System", "error");
-        }
-    </script>
-    <script>
+        $('input[name="date_of_death"]').each(function() {
+            $(this).val(resident_date);
+        });
+
+        });
+
         $('button[data-bs-target="#confirmation"]').on('click', function() {
         // Get the user ID from the data attribute.
         var resident_id = $(this).data('resident-id');
@@ -274,17 +258,6 @@
             $(this).val(resident_id);
         });
         });
-
-        $('button[data-bs-target="#resolve-complain"]').on('click', function() {
-        // Get the user ID from the data attribute.
-        var resident_id = $(this).data('resident-id');
-        console.log(resident_id);
-        // Set the value of all input fields with the name "userid" to the user ID.
-        $('input[name="resident_id"]').each(function() {
-            $(this).val(resident_id);
-        });
-        });
-
     </script>
 </body>
 

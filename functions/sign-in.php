@@ -21,7 +21,7 @@ if (mysqli_num_rows($result) === 1) {
   exit;
 } else {
   // The username and password are not valid, so show an error message
-  header("Location: ../index.php");
+  header("Location: ../index.php#error");
 }
 
 ?>

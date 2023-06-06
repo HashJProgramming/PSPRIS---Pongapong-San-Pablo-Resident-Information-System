@@ -23,13 +23,13 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand-md sticky-top bg-white">
-        <div class="container-fluid"><a class="navbar-brand" href="#">Pongapong San Pablo Resident Information System</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container-fluid"><a class="navbar-brand" href="dashboard.php">Pongapong San Pablo Resident Information System</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-2">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="dashboard.php">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="residents-complains.php">Complains</a></li>
                     <li class="nav-item"><a class="nav-link" href="residents.php">Residents</a></li>
                     <li class="nav-item"><a class="nav-link" href="residents-decease.php">Decease Residents</a></li>
+<li class="nav-item"><a class="nav-link" href="residents-transfered.php">Transfered Residents</a></li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="functions/sign-out.php"><button class="btn btn-outline-primary" type="button">Logout</button></a></li>

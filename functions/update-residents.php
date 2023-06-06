@@ -12,7 +12,7 @@ $email = $_POST['email'];
 $phone = $_POST['phone'];
 $address = $_POST['address'];
 $sex = $_POST['sex'];
-$age = $_POST['age'];
+$age = date_diff(date_create($birthdate), date_create('now'))->y;
 $status = $_POST['status'];
 $cause_of_death = $_POST['cause_of_death'];
 $date_of_death = $_POST['date_of_death'];
@@ -49,7 +49,7 @@ $result = $conn->query($sql);
 
 if ($result === TRUE) {
   // Resident updated successfully
-  header("Location: ../residents.php");
+  header("Location: ../residents.php#sucess");
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }

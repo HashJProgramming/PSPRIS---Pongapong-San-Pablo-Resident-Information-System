@@ -33,7 +33,7 @@ $result = $conn->query($sql);
 
 if ($result === TRUE) {
   // Resident updated successfully
-  header("Location: ../residents-decease.php");
+  header("Location: ../residents-decease.php#success");
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }

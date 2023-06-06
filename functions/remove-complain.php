@@ -14,9 +14,9 @@ $stmt->execute();
 
 // Check if the resident was deleted successfully
 if ($stmt->rowCount() > 0) {
-    header('Location: ../residents-complains.php');
+    header('Location: ../residents-complains.php#success');
 } else {
-    echo 'An error occurred.';
+    header('Location: ../residents-complains.php#error');
 }
 
 ?>

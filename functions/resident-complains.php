@@ -18,7 +18,6 @@ foreach ($results as $row) {
 ?>
           <tr>
             <td><?php echo $row['id']; ?></td>
-            <?php get_respondent($row['resident_id'])?>
             <td><?php echo $row['firstname']; ?></td>
             <td><?php echo $row['lastname']; ?></td>
             <td><?php echo $row['email']; ?></td>

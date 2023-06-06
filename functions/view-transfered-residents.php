@@ -4,7 +4,7 @@
 $db = new PDO('mysql:host=localhost;dbname=db_hashy', 'root', '');
 
 // Get all data from the products table
-$sql = 'SELECT * FROM residents WHERE status LIKE "%decease%" ORDER BY firstname ASC';
+$sql = 'SELECT * FROM residents WHERE status LIKE "%TRANSFERED%" ORDER BY firstname ASC';
 $stmt = $db->prepare($sql);
 $stmt->execute();
 $results = $stmt->fetchAll();
@@ -25,10 +25,6 @@ foreach ($results as $row) {
         <td class="text-center align-middle" style="max-height: 60px;height: 60px;">
         <a class="btn btnMaterial btn-flat success semicircle" role="button" href="residents-profile.php?id=<?php echo $row['id']; ?>">
             <i class="far fa-eye"></i></a>
-                <button class="btn btnMaterial btn-flat success semicircle" role="button" data-bs-target="#update-resident" data-bs-toggle="modal" data-resident-id="<?php echo $row['id']; ?>" data-resident-cause="<?php echo $row['cause_of_death']; ?>" data-resident-death="<?php echo $row['date_of_death']; ?>">
-            <i class="fas fa-pen"></i></button>
-                <button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover" type="button" style="margin-left: 5px;" data-bs-toggle="modal" data-bs-target="#confirmation" data-resident-id="<?php echo $row['id']; ?>">
-            <i class="fas fa-trash btnNoBorders" style="color: #DC3545;"></i></button>
         </td>
     </tr>
 <?php

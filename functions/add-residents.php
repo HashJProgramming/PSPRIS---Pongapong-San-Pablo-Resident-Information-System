@@ -9,7 +9,8 @@ $email = $_POST['email'];
 $phone = $_POST['phone'];
 $address = $_POST['address'];
 $sex = $_POST['sex'];
-$age = $_POST['age'];
+// get age by subtracting birthdate from current date
+$age = date_diff(date_create($birthdate), date_create('now'))->y;
 
 $sex = strtoupper($sex);
 // Check if resident already exists
@@ -18,7 +19,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   // Resident already exists
-  header("Location: ../residents.php");
+  header("Location: ../residents.php#error");
 } else {
   // Resident does not exist
   // Insert the data into the database
@@ -26,7 +27,8 @@ if ($result->num_rows > 0) {
 
   // Execute the query
   if ($conn->query($sql) === TRUE) {
-    header("Location: ../residents.php");
+    
+    header("Location: ../residents.php#success");
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }

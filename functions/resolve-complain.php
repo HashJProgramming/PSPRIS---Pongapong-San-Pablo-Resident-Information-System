@@ -15,7 +15,7 @@ $stmt->execute();
 
 // Check if the status was updated successfully
 if ($stmt->rowCount() > 0) {
-    header('Location: ../residents.php');
+    header('Location: ../residents.php#success');
 } else {
     echo 'An error occurred.';
 }

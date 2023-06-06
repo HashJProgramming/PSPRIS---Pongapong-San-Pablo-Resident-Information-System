@@ -25,13 +25,14 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand-md sticky-top bg-white">
-        <div class="container-fluid"><a class="navbar-brand" href="#">Pongapong San Pablo Resident Information System</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container-fluid"><a class="navbar-brand" href="dashboard.php">Pongapong San Pablo Resident Information System</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-2">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="dashboard.php">Dashboard</a></li>
+                    
                     <li class="nav-item"><a class="nav-link" href="residents-complains.php">Complains</a></li>
                     <li class="nav-item"><a class="nav-link" href="residents.php">Residents</a></li>
                     <li class="nav-item"><a class="nav-link" href="residents-decease.php">Decease Residents</a></li>
+                    <li class="nav-item"><a class="nav-link" href="residents-transfered.php">Transfered Residents</a></li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="functions/sign-out.php"><button class="btn btn-outline-primary" type="button">Logout</button></a></li>
@@ -144,37 +145,41 @@
                                 <div class="form-group mb-3">
                                     <div class="row">
                                         <div class="col">
-                                            <p><strong>First Name</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" type="text" required="" name="firstname" placeholder="Ex. Juan">
+                                            <p><strong>First Name</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" pattern="^(?!\s).*$" type="text" required="" name="firstname" placeholder="Ex. Juan">
                                         </div>
                                         <div class="col">
-                                            <p><strong>Last Name</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" type="text" required="" name="lastname" placeholder="Ex. Smith">
+                                            <p><strong>Last Name</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" pattern="^(?!\s).*$" type="text" required="" name="lastname" placeholder="Ex. Smith">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group mb-3">
                                     <div class="row">
                                         <div class="col">
-                                            <p><strong>Date Of Birth</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" type="date" required="" name="birthdate">
+                                            <p><strong>Date Of Birth</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" pattern="^(?!\s).*$" type="date" required="" name="birthdate">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group mb-3">
-                                    <p><strong>Email&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" type="email" name="email" placeholder="user@domain.com (Optional)">
+                                    <p><strong>Email&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" pattern="^(?!\s).*$" type="email" name="email" placeholder="user@domain.com (Optional)">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <p><strong>Phone Number&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" type="number" name="phone" placeholder="63+ 00 000 0000" required="">
+                                    <p><strong>Phone Number&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" pattern="^(?!\s).*$" type="number" name="phone" placeholder="63 00 000 0000" required="">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <p><strong>Address&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" type="text" required="" name="address" placeholder="Ex. Room No-361, 33/1, 3rd Floor">
+                                    <p><strong>Address&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" pattern="^(?!\s).*$" type="text" required="" name="address" placeholder="Ex. Room No-361, 33/1, 3rd Floor">
                                 </div>
                                 <div class="form-group mb-3">
                                     <div class="row">
                                         <div class="col">
-                                            <p><strong>Sex</strong></p><input class="form-control" type="text" required="" name="sex" placeholder="Ex. Male">
+                                            <p><strong>Sex</strong></p>
+                                            <select class="form-control" name="sex">
+                                                <optgroup label="Sex">
+                                                    <option value="Male" selected>Male</option>
+                                                    <option value="Female">Female</option>
+                                                </optgroup>
+                                            </select>
                                         </div>
-                                        <div class="col">
-                                            <p><strong>Age</strong></p><input class="form-control" type="text" required="" name="age" placeholder="Ex. 18">
-                                        </div>
+
                                     </div>
                                 </div>
                                 <div class="justify-content-center d-flex form-group mb-3">
@@ -210,49 +215,58 @@
                                 <div class="form-group mb-3">
                                     <div class="row">
                                         <div class="col">
-                                            <p><strong>First Name</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" type="text" required="" name="firstname" placeholder="Ex. Juan">
+                                            <p><strong>First Name</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" pattern="^(?!\s).*$" type="text" required="" name="firstname" placeholder="Ex. Juan">
                                         </div>
                                         <div class="col">
-                                            <p><strong>Last Name</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" type="text" required="" name="lastname" placeholder="Ex. Smith">
+                                            <p><strong>Last Name</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" pattern="^(?!\s).*$" type="text" required="" name="lastname" placeholder="Ex. Smith">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group mb-3">
                                     <div class="row">
                                         <div class="col">
-                                            <p><strong>Date Of Birth</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" type="date" required="" name="birthdate">
+                                            <p><strong>Date Of Birth</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" pattern="^(?!\s).*$" type="date" required="" name="birthdate">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group mb-3">
-                                    <p><strong>Email&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" type="email" name="email" placeholder="user@domain.com (Optional)">
+                                    <p><strong>Email&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" pattern="^(?!\s).*$" type="email" name="email" placeholder="user@domain.com (Optional)">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <p><strong>Phone Number&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" type="number" name="phone" placeholder="63+ 00 000 0000" required="">
+                                    <p><strong>Phone Number&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" pattern="^(?!\s).*$" type="number" name="phone" placeholder="63+ 00 000 0000" required="">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <p><strong>Address&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" type="text" required="" name="address" placeholder="Ex. Room No-361, 33/1, 3rd Floor">
+                                    <p><strong>Address&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" pattern="^(?!\s).*$" type="text" required="" name="address" placeholder="Ex. Room No-361, 33/1, 3rd Floor">
                                 </div>
                                 <div class="form-group mb-3">
                                     <div class="row">
-                                        <div class="col">
-                                            <p><strong>Sex</strong></p><input class="form-control" type="text" required="" name="sex" placeholder="Ex. Male">
-                                        </div>
-                                        <div class="col">
-                                            <p><strong>Age</strong></p><input class="form-control" type="text" required="" name="age" placeholder="Ex. 18">
-                                        </div>
+                                            <div class="col">
+                                                <p><strong>Sex</strong></p>
+                                                <select class="form-control" name="sex">
+                                                    <optgroup label="Sex">
+                                                        <option value="Male" selected>Male</option>
+                                                        <option value="Female">Female</option>
+                                                    </optgroup>
+                                                </select>
+                                            </div>
                                     </div>
                                 </div>
                                 <div class="form-group mb-3">
-                                    <p><strong>Status</strong><span class="text-danger">*</span></p><input class="form-control" type="text"  name="status" placeholder="Ex. Deceased">
+                                    <p><strong>Status</strong><span class="text-danger">*</span></p>
+                                        <select class="form-control" name="status">
+                                            <optgroup label="STATUS">
+                                                <option value="ALIVE" selected>ALIVE</option>
+                                                <option value="DECEASED">DECEASED</option>
+                                            </optgroup>
+                                        </select>
                                 </div>
                                 <div class="form-group mb-3">
-                                    <p><strong>Cause of Death</strong><span class="text-danger">*</span></p><textarea class="form-control" type="text" placeholder="Ex.  Heart Attack" name="cause_of_death"></textarea>
+                                    <p><strong>Cause of Death</strong><span class="text-danger">*</span></p><textarea class="form-control" pattern="^(?!\s).*$" type="text" placeholder="Ex.  Heart Attack" name="cause_of_death"></textarea>
                                 </div>
                                 <div class="form-group mb-3">
                                     <div class="row">
                                         <div class="col">
-                                            <p><strong>Date Of Death</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" type="date" name="date_of_death">
+                                            <p><strong>Date Of Death</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" pattern="^(?!\s).*$" type="date" name="date_of_death">
                                         </div>
                                     </div>
                                 </div>
@@ -305,27 +319,33 @@
                                 <div class="form-group mb-3">
                                     <div class="row">
                                         <div class="col">
-                                            <p><strong>First Name</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" type="text" required="" name="firstname" placeholder="Ex. John">
+                                            <p><strong>First Name</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" pattern="^(?!\s).*$" type="text" required="" name="firstname" placeholder="Ex. John">
                                         </div>
                                         <div class="col">
-                                            <p><strong>Last Name</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" type="text" required="" name="lastname" placeholder="Ex. Smith">
+                                            <p><strong>Last Name</strong>&nbsp;<span class="text-danger">*</span></p><input class="form-control" pattern="^(?!\s).*$" type="text" required="" name="lastname" placeholder="Ex. Smith">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group mb-3">
-                                    <p><strong>Email&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" type="email" name="email" placeholder="user@domain.com">
+                                    <p><strong>Email&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" pattern="^(?!\s).*$" type="email" name="email" placeholder="user@domain.com">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <p><strong>Phone Number&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" type="number" name="phone" placeholder="63+ 00 000 0000" required="">
+                                    <p><strong>Phone Number&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" pattern="^(?!\s).*$" type="number" name="phone" placeholder="63+ 00 000 0000" required="">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <p><strong>Address&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" type="text" required="" name="address" placeholder="Ex. Room No-361, 33/1, 3rd Floor">
+                                    <p><strong>Address&nbsp;</strong><span class="text-danger">*</span></p><input class="form-control" pattern="^(?!\s).*$" type="text" required="" name="address" placeholder="Ex. Room No-361, 33/1, 3rd Floor">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <p><strong>Sex</strong><span class="text-danger">*</span></p><input class="form-control" type="text" required="" name="sex" placeholder="Ex. Male">
+                                    <p><strong>Sex</strong><span class="text-danger">*</span></p>
+                                    <select class="form-control" name="sex">
+                                        <optgroup label="Sex">
+                                            <option value="Male" selected>Male</option>
+                                            <option value="Female">Female</option>
+                                        </optgroup>
+                                    </select>
                                 </div>
                                 <div class="form-group mb-3">
-                                    <p><strong>Complain</strong><span class="text-danger">*</span></p><textarea class="form-control" type="text" required="" placeholder="Ex.  Juan is noisy" name="complain"></textarea>
+                                    <p><strong>Complain</strong><span class="text-danger">*</span></p><textarea class="form-control" pattern="^(?!\s).*$" type="text" required="" placeholder="Ex.  Juan is noisy" name="complain"></textarea>
                                 </div>
                                 <div class="justify-content-center d-flex form-group mb-3">
                                     <div id="submit-btn-2">
@@ -350,16 +370,69 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/sweetalert.min.js"></script>
+    <script>
+        const url = window.location.href;
+
+        if (url.indexOf("#success") > -1) {
+        swal("Success", "Pongapong San Pablo Resident Information System", "success");
+        }
+
+        if (url.indexOf("#error") > -1) {
+        swal("Error", "Pongapong San Pablo Resident Information System", "error");
+        }
+    </script>
+
+    
     <script>
          $('button[data-bs-target="#update-resident"]').on('click', function() {
         // Get the user ID from the data attribute.
         var resident_id = $(this).data('resident-id');
-        console.log(resident_id);
+        var resident_firstname = $(this).data('resident-firstname');
+        var resident_lastname = $(this).data('resident-lastname');
+        var resident_birthdate = $(this).data('resident-birthdate');
+        var resident_email = $(this).data('resident-email');
+        var resident_phone = $(this).data('resident-phone');
+        var resident_address = $(this).data('resident-address');
+        var resident_sex = $(this).data('resident-sex');
+        console.log(resident_id, resident_firstname, resident_lastname, resident_birthdate, resident_email, resident_phone, resident_address, resident_sex);
+            
         // Set the value of all input fields with the name "userid" to the user ID.
         $('input[name="resident_id"]').each(function() {
             $(this).val(resident_id);
         });
+
+        $('input[name="firstname"]').each(function() {
+            $(this).val(resident_firstname);
         });
+
+        $('input[name="lastname"]').each(function() {
+            $(this).val(resident_lastname);
+        });
+
+        $('input[name="birthdate"]').each(function() {
+            $(this).val(resident_birthdate);
+        });
+
+        $('input[name="email"]').each(function() {
+            $(this).val(resident_email);
+        });
+
+        $('input[name="phone"]').each(function() {
+            $(this).val(resident_phone);
+        });
+
+        $('input[name="address"]').each(function() {
+            $(this).val(resident_address);
+        });
+
+        $('input[name="sex"]').each(function() {
+            $(this).val(resident_sex);
+        });
+
+        });
+        
+        
 
         $('button[data-bs-target="#add-complain"]').on('click', function() {
         // Get the user ID from the data attribute.
